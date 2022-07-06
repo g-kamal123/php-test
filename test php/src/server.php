@@ -24,9 +24,10 @@ if(isset($_POST['info'])){
 }
 if(isset($_POST['input'])){
     $inp = $_POST['input'];
+    $len = $_POST['length'];
     $text = "<tr>";
     for($i=0;$i<count($arr);$i++){
-        if($arr[$i]['username']==$inp){
+        if(substr($arr[$i]['username'],0,$len)==$inp){
         $text .= "<td>".$arr[$i]['username']."</td>";
         $text .= "<td>".$arr[$i]['password']."</td>";
         }
